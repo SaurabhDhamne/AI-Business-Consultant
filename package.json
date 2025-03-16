@@ -5,9 +5,10 @@
   "homepage": "https://SaurabhDhamne.github.io/AI-Business-Consultant",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+   "predeploy": "npm run build --prefix client",
+   "deploy": "gh-pages -d client/build"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "gh-pages": "^6.3.0",
-    "openai": "^4.85.3"
+    "openai": "^4.85.3",
+    "react-scripts": "^5.0.1"
   }
 }
