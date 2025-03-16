@@ -2,8 +2,11 @@
   "name": "ai-business-qa",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://SaurabhDhamne.github.io/AI-Business-Consultant",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +19,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "gh-pages": "^6.3.0",
     "openai": "^4.85.3"
   }
 }
