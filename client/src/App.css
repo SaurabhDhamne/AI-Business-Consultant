@@ -1,0 +1,74 @@
+/* Global Styles */
+body {
+  background-color: #f4f7fc;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #007bff, #6610f2);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Card Styling */
+.card {
+  border-radius: 12px;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Input and Button */
+.form-control {
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+button {
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Evaluation Results */
+.evaluation-card {
+  background: #fff;
+  border-left: 5px solid #007bff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 50px 10px;
+  }
+
+  .form-control {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
