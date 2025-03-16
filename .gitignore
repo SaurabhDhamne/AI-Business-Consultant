@@ -1,0 +1,19 @@
+# Ignore node modules
+node_modules/
+client/node_modules/
+
+# Ignore build folder
+client/build/
+
+# Ignore environment variables
+.env
+client/.env
+
+# Cache files
+.cache/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
