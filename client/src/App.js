@@ -3,8 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Navbar, Container, Nav, Form, Button, Card, Spinner } from "react-bootstrap";
 import { motion } from "framer-motion";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 
 function App() {
   const [field, setField] = useState("");
@@ -61,7 +59,6 @@ function App() {
 
   return (
     <div>
-      {/* Navigation Bar */}
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand href="#">AI Business Consultant</Navbar.Brand>
@@ -73,7 +70,6 @@ function App() {
         </Container>
       </Navbar>
 
-      {/* Hero Section */}
       <div className="hero-section text-center text-light py-5">
         <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
           Empower Your Business with AI Insights
@@ -81,7 +77,6 @@ function App() {
         <p>Get personalized business evaluation & insights with AI-driven recommendations.</p>
       </div>
 
-      {/* Business Field Input */}
       <Container className="mt-4">
         <Card className="p-4 shadow-lg">
           <Form>
@@ -106,7 +101,6 @@ function App() {
         </Card>
       </Container>
 
-      {/* Display Questions */}
       <Container className="mt-4">
         {questions.length > 0 && (
           <Card className="p-4 shadow-lg">
@@ -139,7 +133,6 @@ function App() {
         )}
       </Container>
 
-      {/* Evaluation Results */}
       {evaluation && (
         <Container className="mt-4">
           <Card className="p-4 shadow-lg">
@@ -148,6 +141,16 @@ function App() {
               <p key={index}><strong>Q{index + 1}:</strong> {score}/10 - {evaluation.feedback[index]}</p>
             ))}
             <h5>Final Rating: {evaluation.final_rating}/10</h5>
+            {evaluation.roadmap && (
+              <>
+                <h5 className="mt-3">Next Steps (Roadmap)</h5>
+                <ul>
+                  {evaluation.roadmap.map((step, index) => (
+                    <li key={index}>{step}</li>
+                  ))}
+                </ul>
+              </>
+            )}
           </Card>
         </Container>
       )}
