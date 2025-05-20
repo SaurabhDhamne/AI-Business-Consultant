@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 const PORT = 5000;
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-lite" });
 
 app.use(cors());
 app.use(express.json());
@@ -22,7 +22,7 @@ app.post("/generate-questions", async (req, res) => {
     }
 
     const prompt = `
-    You are an AI assistant. Generate 4 insightful and specific questions for a business owner in the field of "${field}".
+    You are an AI assistant. Generate 4 insightful and specific questions(not more than 15-20 words) for a business owner in the field of "${field}".
     Focus on important areas such as strategy, marketing, finance, customer retention, or operations.
 
     Return only the questions in a JSON array like:
@@ -94,3 +94,11 @@ Return JSON only, in this exact format:
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+// connecting superbase to .env
+const { createClient } = require('@supabase/supabase-js');
+
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
+);
